@@ -1,6 +1,6 @@
 function combine(a, b, operator) {
-  if(typeof a === 'number') {
-    return parseFloat('0' + '.' + b);
+  if(typeof a === 'number' && b === undefined) {
+    return parseFloat('0' + '.' + a);
   }
   if ((a !== undefined && b !== undefined) && (operator) === '.') {
     return parseFloat(a + '.' + b);
