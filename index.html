@@ -5,68 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="app.js" defer></script>
+    <style>
+      #result {
+        border: 1px solid rebeccapurple;
+        height: 2rem;
+        border-radius: 1px;
+      }
+    </style>
   </head>
   <body>
-    <div id="calculator">
-      <div class="output">
-        <div id="last_operation_history"></div>
-        <div id="box" class="box">0</div>
+    <div>
+      <div id="result">0</div>
+      <div>
+        <button class="numbers">1</button>
+        <button class="numbers">2</button>
+        <button class="numbers">3</button>
+        <button class="numbers">4</button>
+        <button class="numbers">5</button>
       </div>
-      <button class="span-two" onclick="button_clear()">AC</button>
-      <button id="backspace_btn" onclick="backspace_remove()">DEL</button>
-      <button
-        id="plusOp"
-        value="+"
-        class="operator"
-        onclick="button_number('+')"
-      >
-        +
-      </button>
-      <button onclick="button_number(7)">7</button>
-      <button onclick="button_number(8)">8</button>
-      <button onclick="button_number(9)">9</button>
-      <button
-        id="subOp"
-        value="-"
-        class="operator"
-        onclick="button_number('-')"
-      >
-        -
-      </button>
-      <button onclick="button_number(4)">4</button>
-      <button onclick="button_number(5)">5</button>
-      <button onclick="button_number(6)">6</button>
-      <button
-        id="multiOp"
-        value="*"
-        class="operator"
-        onclick="button_number('*')"
-      >
-        ×
-      </button>
-      <button onclick="button_number(1)">1</button>
-      <button onclick="button_number(2)">2</button>
-      <button onclick="button_number(3)">3</button>
-      <button
-        id="divOp"
-        value="/"
-        class="operator"
-        onclick="button_number('/')"
-      >
-        ÷
-      </button>
-      <button onclick="button_number(0)">0</button>
-      <button id="dot" value="." onclick="button_number('.')">.</button>
-      <button
-        value="="
-        class="operator span-two"
-        id="equal_sign"
-        onclick="button_number('=')"
-      >
-        =
-      </button>
+      <div>
+        <button class="numbers">6</button>
+        <button class="numbers">7</button>
+        <button class="numbers">8</button>
+        <button class="numbers">9</button>
+        <button class="numbers">0</button>
+        <button id="dot">.</button>
+      </div>
+      <div>
+        <button class="operators">+</button>
+        <button class="operators">-</button>
+        <button class="operators">x</button>
+        <button class="operators">/</button>
+        <button id="backspace">backspace</button>
+        <button id="clear">clear</button>
+        <button id="enter">=</button>
+      </div>
     </div>
+    <script type="text/javascript" src="calculator.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
