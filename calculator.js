@@ -1,22 +1,17 @@
 function combine(a, b, operator) {
-  if(typeof a === 'number' && b === undefined) {
-    return parseFloat('0' + '.' + a);
-  }
-  if ((a !== undefined && b !== undefined) && (operator) === '.') {
-    return parseFloat(a + '.' + b);
-  }
-  if (operator === 'x') {
+  if (operator === "x") {
     return a * b;
   }
-  if (operator === '/') {
+  if (operator === "/") {
     return a / b;
   }
-  if (operator === '+') {
+  if (operator === "+") {
     return a + b;
   }
-  if (operator === '-') {
+  if (operator === "-") {
     return a - b;
   }
+
   throw new Error(`Invalid operator: ${operator}`);
 }
 
@@ -33,8 +28,8 @@ function compact(originalElements, operator) {
     const leftIndex = index - 1;
     const rightIndex = index + 1;
 
-    const leftValue = elements[leftIndex];
-    const rightValue = elements[rightIndex];
+    const leftValue = parseFloat(elements[leftIndex]);
+    const rightValue = parseFloat(elements[rightIndex]);
 
     // update operator to new value
     elements[index] = combine(leftValue, rightValue, operator);
@@ -48,15 +43,14 @@ function compact(originalElements, operator) {
 }
 
 function calculate(elements) {
-  compact(elements, '.');
-  compact(elements, 'x');
-  compact(elements, '/');
-  compact(elements, '+');
-  compact(elements, '-');
+  compact(elements, "x");
+  compact(elements, "/");
+  compact(elements, "+");
+  compact(elements, "-");
 
   if (elements.length > 1) {
     throw new Error(
-      `there are some invalid elements ${JSON.stringify(elements)}`,
+      `there are some invalid elements ${JSON.stringify(elements)}`
     );
   }
 
@@ -64,7 +58,5 @@ function calculate(elements) {
 }
 
 function convertElements2String(elements) {
-  if (elements.length > 0) {
-    return elements.join(' ');
-  } else return  0; // For return 0 if user clear the formula
+  return elements.join(" ");
 }
